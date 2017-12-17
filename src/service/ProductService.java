@@ -15,7 +15,10 @@ import entity.Product;
 public class ProductService {
 	Session session = null;
 	Transaction ts = null;
-	
+	/**
+	 *所有的商品列表
+	 * @return list
+	 */
 	public List<Product> selectAll() {
 		session = HibernateUtil.openSession();
 		Query query = session.createQuery("from Product");
@@ -24,8 +27,11 @@ public class ProductService {
 		return list;
 	}
 	
-	
-	
+	/**
+	 * 根据id查询
+	 * @param id
+	 * @return product
+	 */
 	public Product selectById(int id) {
 		session = HibernateUtil.openSession();
 		Query query = session.createQuery("from Product where id = ?");
@@ -35,8 +41,11 @@ public class ProductService {
 		return product;
 	}
 	
-	
-	
+	/**
+	 * 判断此商品是否已经加入购物车
+	 * @param product
+	 * @return
+	 */
 	public boolean hasSameGoods(Product product) {
 		session = HibernateUtil.openSession();
 		Query query = session.createQuery("from Goods where name = ?");

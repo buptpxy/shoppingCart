@@ -8,11 +8,29 @@ public class Goods implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 主键id
+	 */
 	private Integer id;
+	/**
+	 * 图片地址
+	 */
 	private String pictureUrl;
+	/**
+	 * 商品名称
+	 */
 	private String name;
+	/**
+	 * 商品价格
+	 */
 	private Float price;
+	/**
+	 * 数量
+	 */
 	private Integer count;
+	/**
+	 * 小计
+	 */
 	private Float subtotal;
 
 	// Constructors

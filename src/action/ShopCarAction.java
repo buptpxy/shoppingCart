@@ -11,9 +11,21 @@ import com.opensymphony.xwork2.ActionSupport;
 import entity.Goods;
 
 public class ShopCarAction extends ActionSupport {
+	/**
+	 * 购物车中的物品
+	 */
 	private Goods goods;
+	/**
+	 * 购物车中的物品列表
+	 */
 	private List<Goods> goodsList;
+	/**
+	 * 要删除的物品的id
+	 */
 	private int deleteId;
+	/**
+	 * 要修改的物品的id
+	 */
 	private int modifyId;
 
 	public int getModifyId() {
@@ -49,6 +61,11 @@ public class ShopCarAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
+	/**
+	 * 删除购物车中的商品
+	 * @return SUCCESS
+	 * @throws Exception
+	 */
 	public String delete() throws Exception {
 		ShopCarService sc = new ShopCarService();
 		Object[] options = { "是", "取消" }; 
@@ -63,6 +80,11 @@ public class ShopCarAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
+	/**
+	 * 添加商品至购物车时商品数目和价格变化
+	 * @return SUCCESS
+	 * @throws Exception
+	 */
 	public String addCount() throws Exception {
 		// TODO Auto-generated method stub
 		ShopCarService sc = new ShopCarService();
@@ -84,6 +106,11 @@ public class ShopCarAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
+	/**
+	 * 减少商品时商品数目和价格变化
+	 * @return SUCCESS
+	 * @throws Exception
+	 */
 	public String reduceCount() throws Exception {
 		// TODO Auto-generated method stub
 		ShopCarService sc = new ShopCarService();

@@ -11,8 +11,19 @@ import entity.Goods;
 import entity.Product;
 
 public class ProductAction extends ActionSupport {
+	/**
+	 * 商品
+	 */
 	private Product product;
+	
+	/**
+	 * 商品列表
+	 */
 	private List<Product> productList;
+	
+	/**
+	 * 要添加的商品的id
+	 */
 	private int addId;
 	
 	
@@ -43,6 +54,11 @@ public class ProductAction extends ActionSupport {
 		return SUCCESS;
 	}
 	
+	/**
+	 * 添加商品到购物车
+	 * @return SUCCESS
+	 * @throws Exception
+	 */
 	public String addGoods() throws Exception {
 		// TODO Auto-generated method stub
 		ProductService ps = new ProductService();

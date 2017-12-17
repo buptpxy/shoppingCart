@@ -14,7 +14,10 @@ import entity.Goods;
 public class ShopCarService {
 	Session session = null;
 	Transaction ts = null;
-	
+	/**
+	 * 购物车中的商品列表
+	 * @return list
+	 */
 	public List<Goods> selectAll() {
 		session = HibernateUtil.openSession();
 		Query query = session.createQuery("from Goods");
@@ -22,7 +25,11 @@ public class ShopCarService {
 		HibernateUtil.closeSession(session);
 		return list;
 	}
-	
+	/**
+	 * 根据id删除商品
+	 * @param id
+	 * @return
+	 */
 	public boolean deleltById(int id) {
 		try {
 			session = HibernateUtil.openSession();
@@ -45,7 +52,10 @@ public class ShopCarService {
 			}
 		}
 	}
-	
+	/**
+	 * 修改商品
+	 * @param goods
+	 */
 	public void modify(Goods goods) {
 		try {
 			session = HibernateUtil.openSession();
@@ -65,6 +75,11 @@ public class ShopCarService {
 		}
 	}
 	
+	/**
+	 * 根据id查找商品
+	 * @param id
+	 * @return
+	 */
 	public Goods selectById(int id) {
 		session = HibernateUtil.openSession();
 		Query query = session.createQuery("from Goods where id = ?");
@@ -73,7 +88,10 @@ public class ShopCarService {
 		HibernateUtil.closeSession(session);
 		return goods;
 	}
-	
+	/**
+	 * 增加购物车中的商品数量
+	 * @param goods
+	 */
 	public void add(Goods goods){
 		try {
 			session = HibernateUtil.openSession();

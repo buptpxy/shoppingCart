@@ -1,16 +1,31 @@
 package entity;
 
 /**
- * Product entity. @author MyEclipse Persistence Tools
+ * 商品类
  */
 
 public class Product implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 主键id
+	 */
 	private Integer id;
+	
+	/**
+	 * 商品名称
+	 */
 	private String name;
+	
+	/**
+	 * 图片地址
+	 */
 	private String pictureUrl;
+	
+	/**
+	 * 价格
+	 */
 	private Float price;
 
 	// Constructors
