@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="DelGoods" class="action.ShopCarAction" method="delete">
+			<result name="success">WEB-INF/shopCar.jsp</result>
+		</action>
+		<action name="AddCount" class="action.ShopCarAction" method="addCount">
+			<result name="success">WEB-INF/shopCar.jsp</result>
+		</action>
+		<action name="AddGoods" class="action.ProductAction" method="addGoods">
+			<result name="success">WEB-INF/goodsLists.jsp</result>
+		</action>
+		<action name="ReduceCount" class="action.ShopCarAction" method="reduceCount">
+			<result name="success">WEB-INF/shopCar.jsp</result>
+		</action>
+		<action name="GoodsList" class="action.ShopCarAction" >
+			<result name="success">WEB-INF/shopCar.jsp</result>
+		</action>
+		<action name="ProductList" class="action.ProductAction" >
+			<result name="success">WEB-INF/goodsLists.jsp</result>
+		</action>
+	</package>
+</struts>    
